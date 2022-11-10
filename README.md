@@ -1,4 +1,4 @@
-# CP1_6Team - keypoint detection을 활용한 k-pop 댄스 가이드
+# keypoint detection을 활용한 k-pop 댄스 가이드
 ### 폴더 및 파일 설명
 mysite : 춤영상이 들어있는 media파일을 제외한 장고 폴더
 
