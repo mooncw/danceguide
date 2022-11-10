@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            <style>
+              h1 {text-align: center;}
+              p {text-align: center;}
+              h4 {text-align: center;}
+              ul {text-align: center;}
+              img {text-align: center;}
+              div.dropdown {text-align:center;}
+              .dropdown-menu {text-align: center;}
+            </style>
+            <!-- 움직이는 이미지 -->
+             <script type="text/javascript">
+              var imgArray=new Array();
+              imgArray[0]="/static/1.jpg";
+              imgArray[1]="/static/2.jpg";
+              imgArray[2]="/static/3.jpg";
+              imgArray[3]="/static/4.jpg";
+            
+              function showImage(){
+               var imgNum=Math.round(Math.random()*3);
+               var objImg=document.getElementById("introimg");
+               objImg.src=imgArray[imgNum];
+               setTimeout(showImage,5000);
+              }
+            
+             </script>
+            
+        </head>
+        <body onload="showImage()">
+          
+          <!--cover-->
+          <div class="site-wrapper">
+          
+            <div class="site-wrapper-inner">
+      
+              <div class="container">
+                <style>
+      
+                </style>
+      
+                <div class="masthead clearfix">
+                  <div class="container inner">
+                    <!-- nav bar-->
+                    <nav class="navbar navbar-expand-lg bg-light">
+                      <div class="container">
+                        <a class="navbar-brand">
+                          <img src="static/logo.jpg" alt="" width="140" height="60">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="pose">pose</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                              <a class="nav-link" href="video">video</a>
+                            </li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+      
+                <div class="inner cover">
+                  <h1 class="cover-heading">"광야가 당신의 열기로 채워지도록"</h1>
+                  <hr/>
+                  <p class="lead">춤에 낯선 당신도 빠져들, culture-technology. 당신의 춤선을 탐지하다.</p>
+                  <h4>추고 싶은 춤을 골라 주세요</h4>
+                  <!-- <p class="lead">
+                    <a href="./display.html" class="btn btn-lg btn-default">Learn more</a>
+                  </p> -->
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Music Choice
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      {% for music in music_list %}
+                      <li><a class="dropdown-item" href="/{{music.music_id}}">{{music.music_name}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <hr/>
+                  <img id="introimg">
+                </div>
+
+      
+              </div>
+      
+            </div>
+      
+          </div>
+
+        </body>
+    </html>

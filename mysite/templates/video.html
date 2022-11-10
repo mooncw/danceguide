@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            <style>
+  
+                h1 {text-align: center;}
+                p {text-align: center;}
+                h4 {text-align: center;}
+              </style>
+              <!-- 움직이는 이미지 -->
+             <script type="text/javascript">
+              var imgArray=new Array();
+              imgArray[0]="/static/1.jpg";
+              imgArray[1]="/static/2.jpg";
+              imgArray[2]="/static/3.jpg";
+              imgArray[3]="/static/4.jpg";
+            
+              function showImage(){
+               var imgNum=Math.round(Math.random()*3);
+               var objImg=document.getElementById("introimg");
+               objImg.src=imgArray[imgNum];
+               setTimeout(showImage,5000);
+              }
+            
+             </script>
+        </head>
+        <body onload="showImage()">
+          
+          <!--cover-->
+          <div class="site-wrapper">
+
+            <div class="site-wrapper-inner">
+      
+              <div class="container">
+      
+                <div class="masthead clearfix">
+                  <div class="container inner">
+                    <!-- nav bar-->
+                    <nav class="navbar navbar-expand-lg bg-light">
+                      <div class="container">
+                        <a class="navbar-brand">
+                          <img src="/static/logo.jpg" alt="" width="140" height="60">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="pose">pose</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                              <a class="nav-link" href="/dancecheck/members">members</a>
+                            </li> -->
+                          </ul>
+                        </div>
+                        
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+      
+                <div class="inner cover">
+                  <h1 class="cover-heading">"미지의 광야를 탐색하라"</h1>
+                  <hr/>
+                  <p class="lead"> 추고 싶은 춤의 영상을 보며 여러분의 춤을 완성하세요. 당신의 느낌을 선명하게 보여줄거야</p>
+                  <p class="lead">
+                  </p>
+                  <h1>{{music_query.music_name}}</h1>
+                    <div align="center">
+                        <video height="540" width="960" controls>
+                            <source src="/media/{{music}}.mp4" type="video/mp4">
+                            <!-- <source src="Cat - 2879.ogg" type="video/ogg">
+                                        <source src="Cat - 2879.webm" type="video/webm"> -->
+                            이 브라우저에서 지원하지 않는 영상입니다.
+                        </video>
+                    </div>
+            
+                  </div>
+                  <hr/>
+                  <img id="introimg">
+                </div>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+
+        </body>
+    </html>
