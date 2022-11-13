@@ -27,10 +27,9 @@ mysite : 춤영상이 들어있는 media파일을 제외한 장고 폴더
  
  
  ### 진행된 웹 시연 영상
-https://user-images.githubusercontent.com/97713997/201011012-f33329c7-10be-420e-8dea-de976898301c.mp4
+https://user-images.githubusercontent.com/97713997/201502261-6526fc16-4c9d-4f66-ace7-47ae5cc7ef22.mp4
 
 
- 
  ### 한계 및 보완점
  1. 가이드에 대한 모델과 알고리즘이 없음
  2. 곡 전체 길이에 대한 춤영상이 아니였고, 노래가 없음
